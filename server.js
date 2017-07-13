@@ -29,7 +29,7 @@ I will respond to the following messages:
 // Setup different handlers for messages
 //*********************************************
 
-slapp.message(/^(can it be friday( yet| already)?\??)/i, ['mention', 'direct_message', 'direct_mention', 'ambient'], (msg) => {
+slapp.message(/(can it be friday( yet| already)?\??)/i, ['mention', 'direct_message', 'direct_mention', 'ambient'], (msg) => {
   
   var day = dayOfTheWeek();
 
@@ -55,7 +55,7 @@ slapp.message(/^(can it be friday( yet| already)?\??)/i, ['mention', 'direct_mes
   
 })
 
-slapp.message(/^(when is it friday\??)/i, ['mention', 'direct_message', 'direct_mention', 'ambient'], (msg) => {
+slapp.message(/(when is it friday\??)/i, ['mention', 'direct_message', 'direct_mention', 'ambient'], (msg) => {
   
   var day = dayOfTheWeek();
 
@@ -81,7 +81,7 @@ slapp.message(/^(when is it friday\??)/i, ['mention', 'direct_message', 'direct_
   
 })
 
-slapp.message(/^(is it friday( yet| already)?\??)/i, ['mention', 'direct_message', 'direct_mention', 'ambient'], (msg) => {
+slapp.message(/(is it friday( yet| already)?\??)/i, ['mention', 'direct_message', 'direct_mention', 'ambient'], (msg) => {
   
   var day = dayOfTheWeek();
 
@@ -112,7 +112,7 @@ slapp.message(/^(is it friday( yet| already)?\??)/i, ['mention', 'direct_message
 
 
 // Catch-all for any other responses not handled above
-slapp.message(/^(what day is it\??)/i, ['mention', 'direct_message', 'direct_mention', 'ambient'], (msg) => {
+slapp.message(/(what day is it\??)/i, ['mention', 'direct_message', 'direct_mention', 'ambient'], (msg) => {
   
   var day = dayOfTheWeek();
 
