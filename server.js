@@ -40,13 +40,18 @@ slapp.message(/^(what day is it\?)/i, ['mention', 'direct_message', 'direct_ment
   var days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
   var day = days[ now.getDay() ];
 
-  var returnMessage = { text: "It's "+days[ now.getDay()] };
+  var returnMessage = { text: "It's "+days[ now.getDay()],
+                        attachments: [{
+                          title: "It's "+days[ now.getDay()],
+                          image_url: 'http://i.imgur.com/O8tOJ0Q.png',
+                          title_link: 'http://www.usmanjj.com/',
+                          color: '#7CD197'
+                        }]  };
 
   if(day == "Friday"){
-    returnMessage = { text: "IT'S FRIDAAAYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY!!!!!!!!",
+    returnMessage = {  text: "What day?",
                        attachments: [{
-                          text: 'DAYBOT SAYS IT\'S FRIDAAAYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY',
-                          title: 'FRIDAY!!!',
+                          title: 'What day?',
                           image_url: 'http://i.imgur.com/nKbOKwf.png',
                           title_link: 'http://www.usmanjj.com/',
                           color: '#7CD197'
@@ -57,28 +62,7 @@ slapp.message(/^(what day is it\?)/i, ['mention', 'direct_message', 'direct_ment
   
 })
 
-// Catch-all for any other responses not handled above
-slapp.message(/^(testestest\?)/i, ['mention', 'direct_message', 'direct_mention', 'ambient'], (msg) => {
-  var now = new Date();
-  var days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
-  var day = days[ now.getDay() ];
 
-  var returnMessage = { text: "It's "+days[ now.getDay()] };
-
-  
-    returnMessage = { 
-                    text: "What day?",
-                    attachments: [{
-                          title: 'What day?',
-                          image_url: 'http://i.imgur.com/nKbOKwf.png',
-                          title_link: 'http://www.usmanjj.com/',
-                          color: '#7CD197'
-                        }] 
-                    };
-  
-  msg.say(returnMessage);
-  
-})
 
 
 
