@@ -47,7 +47,7 @@ slapp.message(/^(what day is it\?)/i, ['mention', 'direct_message', 'direct_ment
                        attachments: [{
                           text: 'DAYBOT SAYS IT\'S FRIDAAAYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY',
                           title: 'FRIDAY!!!',
-                          image_url: 'https://lh6.googleusercontent.com/xLudRRMFGY24Lu7qjwQa1mRM-8VSNWE2l2L72XYDKnCDJQkbQfFoYajCsnrcVlJqF-OrNp4SabUE7cQ=w1920-h901',
+                          image_url: 'https://lh5.googleusercontent.com/jnX57kObeYhtEabz-eAdT7MS6FsyLULDjmcv-o0OqA2qwKJawWQdho6ZvHATEbeEpSO9Lre28F3v3yc=w1920-h950',
                           title_link: 'http://www.usmanjj.com/',
                           color: '#7CD197'
                         }] 
@@ -71,7 +71,7 @@ slapp.message(/^(testestest\?)/i, ['mention', 'direct_message', 'direct_mention'
                     attachments: [{
                           text: "It's "+days[ now.getDay()],
                           title: 'FRIDAY!!!',
-                          image_url: 'https://lh6.googleusercontent.com/xLudRRMFGY24Lu7qjwQa1mRM-8VSNWE2l2L72XYDKnCDJQkbQfFoYajCsnrcVlJqF-OrNp4SabUE7cQ=w1920-h901',
+                          image_url: 'https://lh5.googleusercontent.com/jnX57kObeYhtEabz-eAdT7MS6FsyLULDjmcv-o0OqA2qwKJawWQdho6ZvHATEbeEpSO9Lre28F3v3yc=w1920-h950',
                           title_link: 'http://www.usmanjj.com/',
                           color: '#7CD197'
                         }] 
