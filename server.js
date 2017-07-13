@@ -67,6 +67,7 @@ slapp.message(/^(testestest\?)/i, ['mention', 'direct_message', 'direct_mention'
 
   
     returnMessage = { 
+                    text: "It's "+days[ now.getDay()] ,
                     attachments: [{
                           text: "It's "+days[ now.getDay()],
                           image_url: 'https://lh6.googleusercontent.com/xLudRRMFGY24Lu7qjwQa1mRM-8VSNWE2l2L72XYDKnCDJQkbQfFoYajCsnrcVlJqF-OrNp4SabUE7cQ=w1920-h901',
