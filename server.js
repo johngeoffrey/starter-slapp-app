@@ -42,7 +42,7 @@ slapp.message(/^(what day is it\?)/i, ['mention', 'direct_message', 'direct_ment
 
   var returnMessage = "It's "+days[ now.getDay()];
 
-  if(day == "Friday"){
+  if(day == "Thursday"){
     returnMessage = "IT'S FRIDAAAYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY!!!!!!!!";
   }
   msg.say(returnMessage);
