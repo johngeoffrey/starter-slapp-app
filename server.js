@@ -109,9 +109,7 @@ slapp.message('attachment', ['mention', 'direct_message'], (msg) => {
 slapp.message(/^(what day is it\?)/i, ['mention', 'direct_message'], (msg) => {
   var days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
   var day = days[ now.getDay() ];
-    msg.say({
-      text: "It's "+days[ now.getDay()]
-    });
+    msg.say("It's "+days[ now.getDay()]);
   }
 })
 
