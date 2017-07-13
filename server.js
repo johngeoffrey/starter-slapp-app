@@ -40,21 +40,40 @@ slapp.message(/^(what day is it\?)/i, ['mention', 'direct_message', 'direct_ment
   var days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
   var day = days[ now.getDay() ];
 
-  var returnMessage = "It's "+days[ now.getDay()];
+  var returnMessage = { text: "It's "+days[ now.getDay()] };
 
   if(day == "Friday"){
-    returnMessage = "IT'S FRIDAAAYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY!!!!!!!!";
+    returnMessage = { text: "IT'S FRIDAAAYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY!!!!!!!!",
+                       attachments: [{
+                          text: 'DAYBOT SAYS IT\'S FRIDAAAYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY',
+                          title: 'FRIDAY!!!',
+                          image_url: 'https://lh6.googleusercontent.com/xLudRRMFGY24Lu7qjwQa1mRM-8VSNWE2l2L72XYDKnCDJQkbQfFoYajCsnrcVlJqF-OrNp4SabUE7cQ=w1920-h901',
+                          title_link: 'http://www.usmanjj.com/',
+                          color: '#7CD197'
+                        }] 
+                    };
   }
-  msg.say({
-    text:returnMessage,
-    attachments: [{
-      text: 'DAYBOT SAYS IT\'S FRIDAAAYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY',
-      title: 'FRIDAY!!!',
-      image_url: 'https://lh3.googleusercontent.com/UYxU7SiFjs1WuoegWgHN5hqWmS82GYf-h8ZsAaCuoCvN3tVJWKStW9-SN7oXLnoUTwUN9V2wvitQexk=w1920-h901',
-      title_link: 'http://www.usmanjj.com/',
-      color: '#7CD197'
-    }]
-  });
+  msg.say(returnMessage);
+  
+})
+
+// Catch-all for any other responses not handled above
+slapp.message(/^(testestest\?)/i, ['mention', 'direct_message', 'direct_mention', 'ambient'], (msg) => {
+  var now = new Date();
+  var days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+  var day = days[ now.getDay() ];
+
+  var returnMessage = { text: "It's "+days[ now.getDay()] };
+
+  
+    returnMessage = { attachments: [{
+                          image_url: 'https://lh6.googleusercontent.com/xLudRRMFGY24Lu7qjwQa1mRM-8VSNWE2l2L72XYDKnCDJQkbQfFoYajCsnrcVlJqF-OrNp4SabUE7cQ=w1920-h901',
+                          title_link: 'http://www.usmanjj.com/',
+                          color: '#7CD197'
+                        }] 
+                    };
+  
+  msg.say(returnMessage);
   
 })
 
