@@ -45,7 +45,16 @@ slapp.message(/^(what day is it\?)/i, ['mention', 'direct_message', 'direct_ment
   if(day == "Friday"){
     returnMessage = "IT'S FRIDAAAYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY!!!!!!!!";
   }
-  msg.say(returnMessage);
+  msg.say({
+    text:returnMessage,
+    attachments: [{
+      text: 'DAYBOT SAYS IT\'S FRIDAAAYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY',
+      title: 'FRIDAY!!!',
+      image_url: 'https://lh3.googleusercontent.com/UYxU7SiFjs1WuoegWgHN5hqWmS82GYf-h8ZsAaCuoCvN3tVJWKStW9-SN7oXLnoUTwUN9V2wvitQexk=w1920-h901',
+      title_link: 'http://www.usmanjj.com/',
+      color: '#7CD197'
+    }]
+  });
   
 })
 
