@@ -29,20 +29,13 @@ I will respond to the following messages:
 // Setup different handlers for messages
 //*********************************************
 
+slapp.message(/^(can it be friday( yet| already)?\?)/i, ['mention', 'direct_message', 'direct_mention', 'ambient'], (msg) => {
+  
+  var day = dayOfTheWeek();
 
-
-
-
-
-// Catch-all for any other responses not handled above
-slapp.message(/^(what day is it\?)/i, ['mention', 'direct_message', 'direct_mention', 'ambient'], (msg) => {
-  var now = new Date();
-  var days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
-  var day = days[ now.getDay() ];
-
-  var returnMessage = { text: "It's "+days[ now.getDay()],
+  var returnMessage = { text: "Sadly not, it has to be "+day+" first",
                         attachments: [{
-                          title: "It's "+days[ now.getDay()],
+                          title: "It's "+day,
                           image_url: 'http://i.imgur.com/O8tOJ0Q.png',
                           title_link: 'http://www.usmanjj.com/',
                           color: '#7CD197'
@@ -61,6 +54,99 @@ slapp.message(/^(what day is it\?)/i, ['mention', 'direct_message', 'direct_ment
   msg.say(returnMessage);
   
 })
+
+slapp.message(/^(when is it friday\?)/i, ['mention', 'direct_message', 'direct_mention', 'ambient'], (msg) => {
+  
+  var day = dayOfTheWeek();
+
+  var returnMessage = { text: "Sadly, it's only "+day,
+                        attachments: [{
+                          title: "It's "+day,
+                          image_url: 'http://i.imgur.com/O8tOJ0Q.png',
+                          title_link: 'http://www.usmanjj.com/',
+                          color: '#7CD197'
+                        }]  };
+
+  if(day == "Friday"){
+    returnMessage = {  text: "What day?",
+                       attachments: [{
+                          title: 'What day?',
+                          image_url: 'http://i.imgur.com/nKbOKwf.png',
+                          title_link: 'http://www.usmanjj.com/',
+                          color: '#7CD197'
+                        }] 
+                    };
+  }
+  msg.say(returnMessage);
+  
+})
+
+slapp.message(/^(is it friday( yet| already)?\?)/i, ['mention', 'direct_message', 'direct_mention', 'ambient'], (msg) => {
+  
+  var day = dayOfTheWeek();
+
+  var returnMessage = { text: "It's "+day,
+                        attachments: [{
+                          title: "It's "+day,
+                          image_url: 'http://i.imgur.com/O8tOJ0Q.png',
+                          title_link: 'http://www.usmanjj.com/',
+                          color: '#7CD197'
+                        }]  };
+
+  if(day == "Friday"){
+    returnMessage = {  text: "What day?",
+                       attachments: [{
+                          title: 'What day?',
+                          image_url: 'http://i.imgur.com/nKbOKwf.png',
+                          title_link: 'http://www.usmanjj.com/',
+                          color: '#7CD197'
+                        }] 
+                    };
+  }
+  msg.say(returnMessage);
+  
+})
+
+
+
+
+
+// Catch-all for any other responses not handled above
+slapp.message(/^(what day is it\?)/i, ['mention', 'direct_message', 'direct_mention', 'ambient'], (msg) => {
+  
+  var day = dayOfTheWeek();
+
+  var returnMessage = { text: "It's "+day,
+                        attachments: [{
+                          title: "It's "+day,
+                          image_url: 'http://i.imgur.com/O8tOJ0Q.png',
+                          title_link: 'http://www.usmanjj.com/',
+                          color: '#7CD197'
+                        }]  };
+
+  if(day == "Friday"){
+    returnMessage = {  text: "What day?",
+                       attachments: [{
+                          title: 'What day?',
+                          image_url: 'http://i.imgur.com/nKbOKwf.png',
+                          title_link: 'http://www.usmanjj.com/',
+                          color: '#7CD197'
+                        }] 
+                    };
+  }
+  msg.say(returnMessage);
+  
+})
+
+
+function dayOfTheWeek(){
+  var now = new Date();
+  var days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+  var day = days[ now.getDay() ];
+
+
+  return day;
+}
 
 
 
