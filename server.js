@@ -107,6 +107,7 @@ slapp.message('attachment', ['mention', 'direct_message'], (msg) => {
 
 // Catch-all for any other responses not handled above
 slapp.message(/^(what day is it\?)/i, ['mention', 'direct_message'], (msg) => {
+  var now = new Date();
   var days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
   var day = days[ now.getDay() ];
   msg.say("It's "+days[ now.getDay()]);
