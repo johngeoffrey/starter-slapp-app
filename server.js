@@ -106,6 +106,16 @@ slapp.message('attachment', ['mention', 'direct_message'], (msg) => {
 })
 
 // Catch-all for any other responses not handled above
+slapp.message(/^(what day is it\?)/i, ['mention', 'direct_message'], (msg) => {
+  var days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+  var day = days[ now.getDay() ];
+    msg.say({
+      text: "It's "+days[ now.getDay()]
+    });
+  }
+})
+
+// Catch-all for any other responses not handled above
 slapp.message('.*', ['direct_mention', 'direct_message'], (msg) => {
   // respond only 40% of the time
   if (Math.random() < 0.4) {
